@@ -9,13 +9,9 @@ class Author(models.Model):
         return self.name
 
 
-class Book(models.Model):
-    title = models.CharField(max_length=100)
-    authors = models.ManyToManyField(Author)
-    description = models.TextField()
-    publication_date = models.DateField()
-    cover_image = models.ImageField(upload_to='book_covers/')
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+class Recipe(models.Model):
+    recipe_name = models.CharField(max_length=100)
+    recipe_description = models.TextField()
 
     def __str__(self):
-        return self.title
+        return self.recipe_name
